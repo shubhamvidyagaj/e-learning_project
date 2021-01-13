@@ -1,0 +1,39 @@
+<div>
+    <div>
+        <label style="margin-left: 5%;" ><b>Course Name:</b></label>{{course.name}}
+    </div>
+    <div>
+        <label style="margin-left: 5%;"><b>Instructor:</b></label>{{course.instructor}}
+    </div>
+    <div>
+        <label style="margin-left: 5%;"><b>Publish Date:</b></label>{{course.publishDate}}
+    </div>
+    <div>
+        <label style="margin-left: 5%;"><b>Last Updated:</b></label>{{course.lastUpdated}}
+    </div>
+    <div>
+        <label style="margin-left: 5%;"><b>Course Hours:</b></label>{{course.totalHours}}
+    </div>
+</div>
+
+
+<h3 style="margin-left: 45%;">Course Overview</h3>
+<div *ngFor="let s of syllabus">
+   
+
+    <div>
+        <label style="margin-left: 30px;"><b>{{s.description}}</b></label>
+        <hr>
+    </div>
+    
+    <div>
+        <p style="margin-left: 50px;">{{s.description_details}}</p>
+    </div>
+    
+</div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<button type="button" (click)="onClicks()" style="margin-left: 30px;" class="btn btn-primary">Back to List</button>

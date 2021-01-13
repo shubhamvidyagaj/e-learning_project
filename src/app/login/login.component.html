@@ -1,0 +1,61 @@
+
+
+<!-- 
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>Learn from Home<br> Login Page</h2>
+       <p>Login or register from here to access.</p>
+    </div>
+  </div>
+  <div class="main">
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form">
+          <form #loginform="ngForm" (ngSubmit)="loginUser()">
+             <small class="text-danger">{{errmsg}}</small>
+             <div class="form-group">
+                <label>User Name</label>
+                <input type="email" class="form-control" placeholder="User Name" name="username" [(ngModel)]="user.username" required #username="ngModel"
+                [class.is-invalid]="username.invalid && username.touched">
+             </div>
+             <p *ngIf="username.invalid && username.touched" class="text-danger">username can not be empty</p>
+
+             <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password"  required #username="ngModel"
+                [class.is-invalid]="username.invalid && username.touched">
+             </div>
+
+             <p *ngIf="username.invalid && username.touched" class="text-danger">password can not be empty</p>
+             <button type="submit" class="btn btn-black">Login</button>
+             <button type="button" class="btn btn-secondary" style="margin-left: 12px;" (click)="gotoregister()">Register</button>
+          </form>
+       </div>
+    </div>
+  </div>
+
+   -->
+ <form #loginform="ngForm" (ngSubmit)="loginUser()">
+   <div class="simple-login-container">
+      <h2>Login Form</h2>
+      <small class="text-danger">{{errmsg}}</small>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input type="text" class="form-control" placeholder="Username" name="username" [(ngModel)]="user.username" required #username="ngModel"
+              [class.is-invalid]="username.invalid && username.touched">
+          </div>
+          <p *ngIf="username.invalid && username.touched" class="text-danger">username can not be empty</p>
+      </div>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input type="password" placeholder="Enter your Password" class="form-control" name="password" [(ngModel)]="user.password"  required #pass="ngModel"
+              [class.is-invalid]="username.invalid && username.touched">
+          </div>
+          <p *ngIf="pass.invalid && pass.touched" class="text-danger">password can not be empty</p>
+      </div>
+      <div class="row">
+          <div class="col-md-12 form-group">
+              <input type="submit" class="btn btn-block btn-login" placeholder="Enter your Password" >
+          </div>
+      </div>
+  </div>
+</form>

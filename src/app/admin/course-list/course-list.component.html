@@ -1,0 +1,33 @@
+<h2 style="text-align: center;">Course List</h2>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Course Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Instructor Name</th>
+        <th scope="col">Publish_Date</th>
+        <th scope="col">Modified_Date</th>
+        <th scope="col">Total_Hrs</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses">
+          <td>{{course.name}}</td>
+          <td>{{course.description}}</td>
+          <td>{{course.instructor}}</td>
+          <td>{{course.lastUpdated}}</td>
+          <td>{{course.publishDate}}</td>
+          <td>{{course.totalHours}}</td>
+          <td>
+
+            <button type="button" (click)="onUpdate(course.id)" class="btn btn-info">Update</button>
+            <button type="button" (click)="onDelete(course.id)" class="btn btn-danger" style="margin-left: 10px;"> Delete</button>
+            <button type="button" (click)="onAddSyllabus(course.id)" class="btn btn-primary" style="margin-left: 10px;">Syllabus</button>
+          </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-lg btn-primary button" routerLink="/admin_course-add">Add New Course</button>

@@ -1,0 +1,110 @@
+<div class="container">
+    <form class="form-horizontal" role="form" #register="ngForm" (ngSubmit)="registerUser()">
+        <h2>Registration</h2>
+         
+        <small class="text-danger">{{errMsg}}</small>
+
+        <div class="form-group">
+            <label for="firstName" class="col-sm-3 control-label">Name</label>
+            <div class="col-sm-9">
+                <input type="text" id="firstName" placeholder="Name" class="form-control"   [(ngModel)]="newUser.name" required  autofocus name="name" #name="ngModel">
+            </div>
+            <div *ngIf="name.invalid && name.touched">
+              <small class="text-danger">Name is required field</small>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="UName" class="col-sm-3 control-label">Username</label>
+            <div class="col-sm-9">
+                <input type="text" id="UName" placeholder="Username" class="form-control"   [(ngModel)]="newUser.username" required   autofocus name="username"
+                #username="ngModel">
+            </div>
+            <div *ngIf="username.invalid && username.touched">
+                <small class="text-danger">Username is required field</small>
+              </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="email" class="col-sm-3 control-label">Email* </label>
+            <div class="col-sm-9">
+                <input type="email" id="email" placeholder="Email"  [(ngModel)]="newUser.email" required class="form-control" name= "email"
+                #email="ngModel">
+            </div>
+            <div *ngIf="email.invalid && email.touched">
+                <small class="text-danger">Email is required field</small>
+              </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Password*</label>
+            <div class="col-sm-9">
+                <input type="password" id="password" placeholder="Password"  [(ngModel)]="newUser.password" required class="form-control" name="password"
+                #pass="ngModel">
+            </div>
+            <div *ngIf="pass.invalid && pass.touched">
+                <small class="text-danger">Password is required field</small>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+            <div class="col-sm-9">
+                <input type="password" id="cpassword" placeholder="Confirm Password"  (ngModel)="newUser.password" required class="form-control" name="cpassword"
+                #cpass="ngModel">
+            </div>
+            <small class="text-danger" [class.d-none]="(pass.value == cpass.value) || cpass.untouched">Confirm Password is not matched</small>
+            <div *ngIf="cpass.invalid && cpass.touched">
+                <small class="text-danger">Confirm Password is required field</small>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="birthDate" class="col-sm-3 control-label">Date of Birth*</label>
+            <div class="col-sm-9">
+                <input type="date" id="birthDate" class="form-control" name="dob" [(ngModel)]="newUser.birthdate" required
+                #dob="ngModel">
+            </div>
+            <div *ngIf="dob.invalid && dob.touched">
+                <small class="text-danger">Birthdate is required field</small>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-sm-3">role</label>
+            <div class="col-sm-9">
+            <select name="role" id="role" [(ngModel)]="newUser.role" required>
+                <option value="student">Student</option>
+                <option value="Professional">Professional</option>
+              </select>
+            </div>
+        </div>
+        
+       
+        
+        <div class="form-group">
+            <label class="control-label col-sm-3">Gender</label>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="femaleRadio" value="FeMale" name="gender" [(ngModel)]="newUser.gender">FeMale
+                        </label>
+                    </div>
+                    <div class="col-sm-4">
+                        <label class="radio-inline">
+                            <input type="radio" id="maleRadio" value="Male" name="gender" [(ngModel)]="newUser.gender" style="margin-left: 12px;">Male
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- /.form-group -->
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form> <!-- /form -->
+</div> <!-- ./container -->
+

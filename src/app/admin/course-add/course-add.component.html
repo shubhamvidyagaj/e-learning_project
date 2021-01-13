@@ -1,0 +1,32 @@
+<div class="col-md-6 offset-md-3">
+    <h3>Create New Course</h3>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="cn">Course Name</label>
+          <input type="text" class="form-control" placeholder="Enter course name" id="cn" name="cn" [(ngModel)]="course.name" >
+        </div>
+        <div class="form-group">
+          <label for="des">Description</label>
+          <input type="text" class="form-control" placeholder="Enter description" id="des" name="des" [(ngModel)]="course.description" >
+        </div>
+        <div class="form-group">
+            <label for="ins">Instructor Name</label>
+            <input type="text" class="form-control" placeholder="Enter Instructor" id="ins" name="ins" [(ngModel)]="course.instructor" >
+        </div>
+        <div class="form-group">
+            <label for="pd">published Date</label>
+            <input type="date" class="form-control"  id="pd" name="pd" [(ngModel)]="course.publishDate" >
+        </div>
+        <div class="form-group">
+            <label for="md">Modified Date</label>
+            <input type="date" class="form-control" id="md" name="md" [(ngModel)]="course.lastUpdated">
+        </div>
+        <div class="form-group">
+            <label for="th">Total Hours</label>
+            <input type="number" class="form-control"  id="th" name="th" [(ngModel)]="course.totalHours" >
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    
+    </div>
